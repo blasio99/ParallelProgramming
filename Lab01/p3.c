@@ -34,13 +34,16 @@ int main(){
     clock_t clock_st;
     double elapsed_time;
 
-    clock_st = clock();
-
     /* ---------- call for the problem ---------- */
-    long N = 50000000;
+    long N = 0;
 
-    printf("PI with N=%d is \n", N);
-    printf("%0.15lf\n", computePi(N));
+    printf("> For calculating PI\n> N = ");
+    scanf("%d", &N);
+
+    clock_st = clock();
+    
+    printf("> PI with N=%d is %0.15lf\n", N, computePi(N));
+    
     /* ----- end operations for the problem ----- */
 
     elapsed_time = (double)(clock() - clock_st) / CLOCKS_PER_SEC;

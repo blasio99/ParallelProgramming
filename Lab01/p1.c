@@ -58,18 +58,21 @@ int main(){
     clock_t clock_st;
     double elapsed_time;
 
-    clock_st = clock();
-
     /* ---------- call for the problem ---------- */
-    unsigned int    A = 2;
-    unsigned int    B = 100;
+    unsigned int A = 0;
+    unsigned int B = 0;
+
+    printf("> For picking primes from [A, B] (use the format showed below)\n> A B = ");
+    scanf("%d %d", &A, &B);
+
+    clock_st = clock();
 
     findAllPrimes(A, B);
     /* ----- end operations for the problem ----- */
 
     elapsed_time = (double)(clock() - clock_st) / CLOCKS_PER_SEC;
 
-    printf("> Elapsed time is %lf\n", elapsed_time);
+    printf("\n> Elapsed time is %lf\n", elapsed_time);
 
 }
 
@@ -111,6 +114,8 @@ boolean isPrime(unsigned int number){
 void findAllPrimes(unsigned int A, unsigned int B)
 {
     _assert(A < B);
+
+    printf("> ");
 
     for (unsigned int i = A; i <= B; ++i)
     {

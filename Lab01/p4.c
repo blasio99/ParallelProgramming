@@ -20,8 +20,8 @@
 ************************************************/
 
 /*
-* Problem 3 – Compute the value of PI (π)
-*/
+ * Problem 4 – Compute the value of PI (π) using the Monte Carlo method
+ */
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -36,16 +36,17 @@ int main(){
     clock_t clock_st;
     double elapsed_time;
 
-    clock_st = clock();
-
     /* ---------- call for the problem ---------- */
     srand(time(NULL));
 
     unsigned int N = 100000000;
-    // printf("For number of points\nN = ");
-    // scanf_s("%d", &N);
+    
+    printf("> For number of points\n> N = ");
+    scanf("%d", &N);
 
-    printf("PI = %lf\n", calculatePi(N));
+    clock_st = clock();
+
+    printf("> PI = %lf\n", calculatePi(N));
     /* ----- end operations for the problem ----- */
 
     elapsed_time = (double)(clock() - clock_st) / CLOCKS_PER_SEC;

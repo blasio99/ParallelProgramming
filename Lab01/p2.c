@@ -60,15 +60,18 @@ int main(){
     clock_t clock_st;
     double elapsed_time;
 
-    clock_st = clock();
-
     /* ---------- call for the problem ---------- */
     srand(time(NULL));
 
-    unsigned int N = 10000;
+    unsigned int N = 0;
     unsigned int O = 0;
     unsigned int Z = 0;
 
+    printf("For length of array\nN = ");
+    scanf("%d", &N);
+
+    clock_st = clock();
+    
     unsigned char* S = (unsigned char*)malloc(sizeof(unsigned char) * N);
     
     for (unsigned int i = 0; i < N; ++i)
