@@ -1,0 +1,6 @@
+#VSCode folder
+.vs
+
+#Execution files created by the compilator
+#Most of the times it is created in bin folders
+*.exe
