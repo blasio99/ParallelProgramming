@@ -11,14 +11,12 @@ createThreads(N, N) :- !.
 createThreads(I, N) :-
     I < N,
     NewI is I + 1,
-    thread_create(worker(I, N, 0, 3000), IDX, []),
+    thread_create(worker(I, N, 0, 664), IDX, []),
     createThreads(NewI, N),
     thread_join(IDX, _).
 
-fibonacci(I, N, _) :-
-	I > N,
-	!.
 fibonacci(I, N, NbThreads) :-
+    I =< N, !,
 	% thread_self(Id),
     PREC is N // 2,
     sqrt5(PREC, SQRT5),
